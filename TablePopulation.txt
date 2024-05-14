@@ -1,0 +1,88 @@
+use GamingPlatforms;
+INSERT INTO Game (Name, Price, ReleaseDate, AgeRestriction, GameFileSizeInGB, AchievementNumber)
+VALUES
+    ('For Honor', 15, '2015-01-01', 18, 80, NULL),
+    ('Bioshock: Infinite', 30, '2013-01-01', 16, 35, 80),
+    ('Phasmophobia', 16, '2020-02-02', 14, 20, NULL),
+    ('The Long Dark', 20, '2015-04-02', 12, 50, 50),
+    ('Valorant', null, '2020-09-09', 12, 40, NULL),
+    ('Cities: Skylines', 28, '2015-12-30', 7, 68, 220),
+    ('League of Legends', null, '2009-04-11', 12, 40, NULL),
+    ('Call of Duty: Modern Warfare 2', 60, '2019-08-20', 18, 220, 20),
+    ('After Dark', 15, '2023-11-14', 16, 21, 5),
+    ('Dead by Daylight', 20, '2016-01-01', 18, 40, 170),
+    ('Counter Strike', null, '2013-05-09', 16, 33, 1);
+
+INSERT INTO DLC (GameID, Price, Name, Description)
+VALUES
+    (4, 20, 'Wintermute', 'The story of William McKenzie on Great Bear Island'),
+    (2, 20, 'Burial at Sea: Episode 1', 'Uncover the true events of Rapture before its downfall'),
+    (4, 20, 'Tales from the Far Territory', 'A set of 4 stories to extend the survival sandbox experience'),
+    (2, 20, 'Burial at Sea: Episode 2', 'Episode 2 of Elizabeth.s story throughout Rapture'),
+    (2, 10, 'Clash in the Clouds', 'Earn blue Ribbons in wave-like combat'),
+    (6, 5, 'After Dark', 'Have new transportation means and a sunset-sunrise cycle'),
+    (6, 15, 'Industries', 'Players can customize their industrial areas with supply chains for the four different resource types and unique factories'),
+    (10, NULL, 'The Last Breath', 'Take hold of The Nurse.s power and hunt your prey in and around Crotus Prenn Asylum'),
+    (10, NULL, 'A lullaby for the Dark', 'Hatchet yielding Huntress makes its way into the Entity.s realm and hunts the survivors in the all new Lodge map'),
+    (10, 6, 'A nightmare on Elm Street', 'Play as one of the most infamous killers of all, The Nightmare, on the Bradham Preschool map');
+
+INSERT INTO Platform (Name, DateEstablished)
+VALUES
+    ('Steam', '2003-05-20'),
+    ('Epic Games', '1996-01-11'),
+    ('Blizzard', '1991-12-02'),
+    ('Riot Games', '2006-08-16');
+
+INSERT INTO PlatformGame (GameID, PlatformID)
+VALUES
+    (1, 1),
+    (2, 1),
+    (3, 1),
+    (4, 1),
+    (6, 1),
+    (9, 1),
+    (5, 4),
+    (7, 4),
+    (2, 2),
+    (4, 2),
+    (6, 2),
+    (8, 1),
+    (8, 3),
+    (10, 1);
+
+INSERT INTO Genre (Name)
+VALUES
+    ('Multiplayer'),
+    ('Singleplayer'),
+    ('Action'),
+    ('Adventure'),
+    ('Role-Playing'),
+    ('Simulation'),
+    ('Strategy'),
+    ('Horror'),
+    ('Sports'),
+    ('Puzzle'),
+    ('Racing');
+
+INSERT INTO GameGenre (GameID, GenreID)
+VALUES
+    (1, 3),
+    (1, 1),
+    (2, 3),
+    (2, 4),
+    (3, 8),
+    (3, 1),
+    (4, 4),
+    (4, 2),
+    (5, 3),
+    (5, 1),
+    (6, 6),
+    (6, 7),
+    (7, 1),
+    (7, 7),
+    (8, 3),
+    (8, 1),
+    (9, 6),
+    (9, 2),
+    (10, 8),
+    (10, 1);

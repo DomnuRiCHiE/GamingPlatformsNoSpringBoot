@@ -1,0 +1,56 @@
+use GamingPlatforms;
+DROP TABLE IF EXISTS GameGenre;
+DROP TABLE IF EXISTS Genre;
+DROP TABLE IF EXISTS DLC;
+DROP TABLE IF EXISTS PlatformGame;
+DROP TABLE IF EXISTS Game;
+DROP TABLE IF EXISTS Platform;
+
+CREATE TABLE Game (
+                      Id int auto_increment PRIMARY KEY,
+                      Name varchar(255),
+                      Price int,
+                      ReleaseDate date,
+                      AgeRestriction int,
+                      GameFileSizeInGB int,
+                      AchievementNumber int
+);
+
+CREATE TABLE DLC (
+                     Id int auto_increment PRIMARY KEY,
+                     GameId int,
+                     Price int,
+                     Name varchar(255),
+                     Description varchar(255),
+                     FOREIGN KEY (GameId) REFERENCES Game(Id)
+);
+
+CREATE TABLE Genre (
+                       Id int auto_increment PRIMARY KEY,
+                       Name varchar(255)
+);
+
+CREATE TABLE GameGenre (
+                           GameId int,
+                           GenreId int,
+                           PRIMARY KEY (GameId, GenreId),
+                           FOREIGN KEY (GameId) REFERENCES Game(Id),
+                           FOREIGN KEY (GenreId) REFERENCES Genre(Id)
+);
+
+CREATE TABLE Platform (
+                          Id int auto_increment PRIMARY KEY,
+                          Name varchar(255),
+                          DateEstablished date
+);
+
+CREATE TABLE PlatformGame (
+                              GameId int,
+                              PlatformId int,
+                              PRIMARY KEY (GameId, PlatformId),
+                              FOREIGN KEY (GameId) REFERENCES Game(Id),
+                              FOREIGN KEY (PlatformId) REFERENCES Platform(Id)
+);
+
+select * from Game;
+select * from DLC;
