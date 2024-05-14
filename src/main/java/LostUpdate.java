@@ -53,7 +53,6 @@ public class LostUpdate {
             if (rowsAffected == 0) {
                 throw new SQLException("Game not found");
             }
-            System.out.println("Price updated successfully by Thread-" + Thread.currentThread().getId());
         } catch (SQLException e) {
             e.printStackTrace();
         }
