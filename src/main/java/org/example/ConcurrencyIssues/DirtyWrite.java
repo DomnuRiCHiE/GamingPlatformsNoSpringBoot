@@ -1,4 +1,6 @@
-package org.example;
+package org.example.ConcurrencyIssues;
+
+import org.example.MySQLConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
