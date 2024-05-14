@@ -1,4 +1,4 @@
-import org.example.MySQLConnection;
+package org.example;
 
 import java.sql.*;
 
